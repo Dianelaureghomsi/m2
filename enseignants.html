@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Enseignant - E_SchoolConnect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="teacher-nav">
+        <div class="nav-left">
+            <img src="assets/images/logo1.png" alt="Logo" class="nav-logo">
+        </div>
+        <div class="nav-right">
+            <ul class="nav-menu">
+                <li><a href="indexe.html">Accueil</a></li>
+                <li>
+                    <a href="#">Notes des élèves <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" id="add-grade-link">Ajouter une note</a></li>
+                        <li><a href="#" id="view-grades-link">Consulter les notes</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="active">Messages <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" id="view-messages-link">Messages reçus</a></li>
+                        <li><a href="#" id="send-message-link">Envoyer un message</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="teacher-account">
+                <a href="logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal-->
+    
+    <main class="teacher-dashboard">
+        <!-- Section Hero -->
+        <section class="teacher-hero" style="background-image: url('assets/images/enseignant.jpg'); background-size: cover; background-position: center; height: 250px;">
+            <div class="hero-content">
+                <h1>INTERFACE ENSEIGNANT</h1>
+                <h3>Gestion des notes et communication avec les parents</h3>
+            </div>
+        </section>
+
+        <!-- Section Statistiques -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <h3>NOTES AJOUTÉES</h3>
+                <div class="stat-value" id="grades-count">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>MESSAGES REÇUS</h3>
+                <div class="stat-value" id="messages-count">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>MESSAGES ENVOYÉS</h3>
+                <div class="stat-value" id="sent-count">0</div>
+            </div>
+        </section>
+
+        <!-- Section Gestion des Notes -->
+        <section class="grades-section" id="grades-section">
+            <h2>Gestion des notes</h2>
+            <div class="action-buttons">
+                <button id="show-add-grade" class="action-btn">Ajouter une note</button>
+                <button id="show-view-grades" class="action-btn">Consulter les notes</button>
+            </div>
+            <div id="add-grade-form" class="form-container" style="display: none;">
+                <h3>Ajouter une nouvelle note</h3>
+                <form id="gradeForm" action="php/add_grade.php" method="POST">
+                    <!-- Étape 1 : Sélection de la classe -->
+                    <div id="view-grades-table" style="display: none;">
+                        <div class="class-selection">
+                            <label for="view-class">Sélectionnez une classe :</label>
+                            <select id="view-class">
+                                <option value="">-- Choisir une classe --</option>
+                                <option value="6eme">6ème</option>
+                                <option value="5eme">5ème</option>
+                                <option value="4eme">4ème</option>
+                                <option value="3eme">3ème</option>
+                            </select>
+                        </div>
+                        
+                        <div id="grades-display" style="margin-top: 20px;">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Élève</th>
+                                        <th>Matière</th>
+                                        <th>Note</th>
+                                        <th>Date</th>
+                                        <th>Commentaire</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="grades-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+            
+                    <!-- Étape 3 : Formulaire de note (apparaît après sélection de l'élève) -->
+                    <div id="grade-details" style="display: none;">
+                        <div class="form-group">
+                            <label for="subject">Matière :</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="grade">Note :</label>
+                            <input type="number" id="grade" name="grade" min="0" max="20" step="0.5" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Commentaire :</label>
+                            <textarea id="comment" name="comment" rows="3"></textarea>
+                        </div>
+                        <input type="hidden" id="selected-student" name="student">
+                        <div class="form-actions">
+                            <button type="button" id="cancel-add-grade" class="cancel-btn">Annuler</button>
+                            <button type="submit" class="submit-btn">Enregistrer</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            </div>
+            <div id="view-grades-table" style="display: none;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Élève</th>
+                            <th>Classe</th>
+                            <th>Matière</th>
+                            <th>Note</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="grades-table-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section Messagerie -->
+        <section class="messages-section" id="messages-section">
+            <h2><i class="fas fa-envelope"></i> Messagerie</h2>
+            <div class="message-tabs">
+                <button class="tab-btn active" data-tab="received">Messages reçus</button>
+                <button class="tab-btn" data-tab="sent">Messages envoyés</button>
+                <button class="tab-btn" data-tab="compose">Nouveau message</button>
+            </div>
+            <div id="received" class="tab-content active">
+                <div class="message-filters">
+                    <select id="filter-received">
+                        <option value="all">Tous les messages</option>
+                        <option value="unread">Non lus</option>
+                        <option value="read">Lus</option>
+                    </select>
+                    <input type="text" id="search-received" placeholder="Rechercher...">
+                </div>
+                <div class="messages-list" id="received-messages"></div>
+            </div>
+            <div id="sent" class="tab-content">
+                <div class="message-filters">
+                    <select id="filter-sent">
+                        <option value="all">Tous les messages</option>
+                        <option value="class">Par classe</option>
+                        <option value="parent">Par parent</option>
+                    </select>
+                    <input type="text" id="search-sent" placeholder="Rechercher...">
+                </div>
+                <div class="messages-list" id="sent-messages"></div>
+            </div>
+            <div id="compose" class="tab-content">
+                <form id="compose-form" class="message-form">
+                    <div class="form-group">
+                        <label for="recipient-type">Destinataire :</label>
+                        <select id="recipient-type" name="recipient_type">
+                            <option value="parent">Parent spécifique</option>
+                            <option value="class">Classe entière</option>
+                            <option value="all">Tous les parents</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-subject">Sujet :</label>
+                        <input type="text" id="message-subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-content">Message :</label>
+                        <textarea id="message-content" name="content" rows="6" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-attachment">Pièce jointe :</label>
+                        <input type="file" id="message-attachment" name="attachment">
+                    </div>
+                    <div class="form-actions">
+                        <button type="reset" class="cancel-btn">Annuler</button>
+                        <button type="submit" class="submit-btn">Envoyer</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <footer class="parent-footer">
+            <a href="indexe.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Retour à l'accueil
+            </a>
+        </footer>
+    </main>
+
+    <script src="messages_enseignants.js"></script>
+</body>
+</html>

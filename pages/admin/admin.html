@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Admin - E_SchoolConnect</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Barre de navigation principale -->
+    <nav class="admin-nav">
+        <div class="nav-left">
+            <img src="logo1.png" alt="Logo" class="nav-logo" sizes="150px">
+          
+        </div>
+        <div class="nav-right">
+            <div class="admin-account">
+                <span class="admin-name">Nom Admin</span>
+                <a href="logout.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+            </div>
+        </div>
+
+    </nav>
+    <section class="teacher-hero" style="background-image: url('image.PNG'); background-size: cover; background-position: center; height: 250px;">
+        <div class="hero-content">
+            <h1>INTERFACE ADMINISTRATEUR</h1>
+            <h3>Gestion des notes et communication avec les parents</h3>
+        </div>
+    </section>
+
+    <!-- Conteneur principal -->
+    <div class="admin-container">
+        <!-- Barre latérale de navigation -->
+        <aside class="admin-sidebar">
+            <ul class="sidebar-menu">
+                <li class="active">
+                    <a href="#"><i class="fas fa-tachometer-alt"></i> Tableau de bord</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-users"></i> Utilisateurs</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-user-graduate"></i> Élèves</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-chalkboard-teacher"></i> Enseignants</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-chalkboard"></i> Classes</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-bell"></i> Notifications</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-calendar-alt"></i> Événements</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-file-alt"></i> Rapports</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-cog"></i> Paramètres</a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Contenu principal -->
+        <main class="admin-main">
+            <!-- En-tête de section -->
+            <header class="admin-header">
+                <h2><i class="fas fa-bell"></i> SUIVI SCOLAIRE</h2>
+                <div class="breadcrumb">
+                    <span>Admin</span> / <span>Tableau de bord</span>
+                </div>
+            </header>
+
+            <!-- Section des statistiques -->
+            <section class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-info">
+                        <h3>Élèves</h3>
+                        <p class="stat-number">1,245</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="stat-info">
+                        <h3>Enseignants</h3>
+                        <p class="stat-number">48</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-school"></i></div>
+                    <div class="stat-info">
+                        <h3>Classes</h3>
+                        <p class="stat-number">24</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-bell"></i></div>
+                    <div class="stat-info">
+                        <h3>Notifications</h3>
+                        <p class="stat-number">12</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section des actions rapides -->
+            <section class="quick-actions">
+                <h3 class="section-title"><i class="fas fa-bolt"></i> Actions rapides</h3>
+                <div class="actions-grid">
+                    <button class="action-btn">
+                        <i class="fas fa-plus-circle"></i> Ajouter un élève
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-envelope"></i> Envoyer un message
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-calendar-plus"></i> Créer un événement
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-file-export"></i> Exporter les données
+                    </button>
+                </div>
+            </section>
+
+            <!-- Section des messages récents -->
+            <section class="recent-messages">
+                <h3 class="section-title"><i class="fas fa-comments"></i> Messages récents</h3>
+                <div class="messages-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Expéditeur</th>
+                                <th>Sujet</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Parent Kamdem</td>
+                                <td>Absence de l'élève</td>
+                                <td>12/04/2023</td>
+                                <td><a href="#" class="action-link"><i class="fas fa-eye"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>Enseignant MTchoffo</td>
+                                <td>Réunion parents-professeurs</td>
+                                <td>10/04/2023</td>
+                                <td><a href="#" class="action-link"><i class="fas fa-eye"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section des événements à venir -->
+            <section class="upcoming-events">
+                <h3 class="section-title"><i class="fas fa-calendar-check"></i> Événements à venir</h3>
+                <div class="events-list">
+                    <div class="event-item">
+                        <div class="event-date">
+                            <span class="day">15</span>
+                            <span class="month">Avr</span>
+                        </div>
+                        <div class="event-info">
+                            <h4>Réunion des parents</h4>
+                            <p>14h00 - Salle de réunion</p>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-date">
+                            <span class="day">20</span>
+                            <span class="month">Avr</span>
+                        </div>
+                        <div class="event-info">
+                            <h4>Journée portes ouvertes</h4>
+                            <p>09h00 - École</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Pied de page -->
+    <footer class="admin-footer">
+        <p>© 2023 E_SchoolConnect - Tous droits réservés</p>
+        <div class="footer-links">
+            <a href="#">Aide</a>
+            <a href="#">Confidentialité</a>
+            <a href="#">Conditions d'utilisation</a>
+        </div>
+    </footer>
+
+    <!--script src="admin.js"></script-->
+</body>
+</html>

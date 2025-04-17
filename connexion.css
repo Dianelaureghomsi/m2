@@ -1,0 +1,213 @@
+/* Styles communs pour toutes les pages de connexion spécifiques */
+.parent-login-container,
+.teacher-login-container,
+.admin-login-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.login-logo {
+    height: 100px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+}
+
+.login-logo:hover {
+    transform: scale(1.05);
+}
+
+.login-mode-selector {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.mode-link {
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    color: #7f8c8d;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.mode-link:hover {
+    color: #3498db;
+    background: #f8f9fa;
+}
+
+.mode-link.active {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+}
+
+.login-form {
+    margin: 2rem 0;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 1rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.login-footer {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.register-link {
+    color: #7f8c8d;
+}
+
+.register-link a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.back-link i {
+    margin-right: 8px;
+    transition: transform 0.3s;
+}
+
+.back-link:hover i {
+    transform: translateX(-3px);
+}
+
+/* Couleurs thématiques spécifiques */
+.parent-login-container .login-btn {
+    background: #4CAF50; /* Vert pour parents */
+}
+
+.parent-login-container .login-btn:hover {
+    background: #3e8e41;
+}
+
+.parent-login-container .mode-link.active {
+    color: #4CAF50;
+    border-bottom-color: #4CAF50;
+}
+
+.teacher-login-container .login-btn {
+    background: #FF9800; /* Orange pour enseignants */
+}
+
+.teacher-login-container .login-btn:hover {
+    background: #e68a00;
+}
+
+.teacher-login-container .mode-link.active {
+    color: #FF9800;
+    border-bottom-color: #FF9800;
+}
+
+.admin-login-container .login-btn {
+    background: #3498db; /* Bleu pour admin */
+}
+
+.admin-login-container .login-btn:hover {
+    background: #2980b9;
+}
+
+.admin-login-container .mode-link.active {
+    color: #3498db;
+    border-bottom-color: #3498db;
+}
+
+/* Styles spécifiques pour le champ matricule (parents) */
+#child-code {
+    margin-top: 1rem;
+}
+
+/* Styles spécifiques pour le champ ID enseignant */
+#teacher-id {
+    margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .parent-login-container,
+    .teacher-login-container,
+    .admin-login-container {
+        margin: 20px auto;
+        padding: 1.5rem;
+    }
+    
+    .login-mode-selector {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .mode-link {
+        margin: 0.5rem 0;
+    }
+}

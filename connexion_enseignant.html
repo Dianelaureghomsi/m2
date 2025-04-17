@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Enseignants - E_SchoolConnect</title>
+    <!--link rel="stylesheet" href="connexion.css"-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="teacher-login-container">
+        <div class="login-header">
+            <img src="assets/images/logo.png" alt="E_SchoolConnect" class="login-logo">
+            <h1>Connexion - Enseignants</h1>
+        </div>
+
+        <div class="login-mode-selector">
+            <a href="connexion_parent.html" class="mode-link">Parents</a>
+            <a href="connexion_enseignant.html" class="mode-link active">Enseignants</a>
+            <a href="connexion_admin.html" class="mode-link">Administration</a>
+        </div>
+
+        <form class="teacher-login-form">
+            <div class="form-group">
+                <label for="teacher-email">Email </label>
+                <input type="email" id="teacher-email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="teacher-password">Mot de passe</label>
+                <input type="password" id="teacher-password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="teacher-id">ID Enseignant</label>
+                <input type="text" id="teacher-id" name="teacher-id" required>
+            </div>
+
+            <button type="submit" class="login-btn">Connexion</button>
+        </form>
+
+        <div class="login-footer">
+            <a href="indexe.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Retour à l'accueil
+            </a>
+            <p class="register-link">
+                Nouvel enseignant? <a href="inscription.html">S'inscrire</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

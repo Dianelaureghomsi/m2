@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - E_SchoolConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-header">
+            <img src="assets/images/logo.png" alt="E_SchoolConnect" class="register-logo">
+            <h1>Remplissez le formulaire</h1>
+        </div>
+
+        <form class="register-form" action="traitement_inscription.php" method="POST">
+            <!-- Champ Statut -->
+            <div class="form-group">
+                <label for="role">Choisissez votre statut</label>
+                <select id="role" name="role" required>
+                    <option value="">-- Sélectionnez --</option>
+                    <option value="parent">Parent</option>
+                    <option value="enseignant">Enseignant</option>
+                    <option value="admin">Administration</option>
+                </select>
+            </div>
+
+            <!-- Champ Nom d'utilisateur -->
+            <div class="form-group">
+                <label for="nom">Nom d'utilisateur</label>
+                <input type="text" id="nom" name="nom" required>
+                <i class="fas fa-check-circle valid-icon"></i>
+            </div>
+
+            <!-- Champ Téléphone -->
+            <div class="form-group">
+                <label for="telephone">Téléphone</label>
+                <input type="tel" id="telephone" name="telephone" required>
+                <i class="fas fa-check-circle valid-icon"></i>
+            </div>
+
+            <!-- Champ Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <i class="fas fa-check-circle valid-icon"></i>
+            </div>
+
+            <!-- Champ Mot de passe -->
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" required>
+                <i class="fas fa-check-circle valid-icon"></i>
+            </div>
+
+            <!-- Bouton Envoyer -->
+            <button type="submit" class="submit-btn">Envoyer</button>
+        </form>
+
+        <div class="register-footer">
+            <a href="indexe.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Retour à l'accueil
+            </a>
+            <p class="login-link">
+                Vous êtes déjà inscrit ? <a href="connexion.html">Me connecter</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

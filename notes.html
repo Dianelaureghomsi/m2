@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes des Élèves - E_SchoolConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Barre de navigation identique -->
+    <nav class="parent-nav">
+        <div class="nav-left">
+            <img src="assets/images/logo.png" alt="Logo" class="nav-logo">
+        </div>
+        <div class="nav-right">
+            <ul class="parent-links">
+                <li><a href="parent.html">Accueil</a></li>
+                <li><a href="messagerie.html">Messagerie</a></li>
+                <li><a href="notes.html" class="active">Notes des élèves</a></li>
+                <li><a href="evennements.html">Événements</a></li>
+            </ul>
+            <div class="parent-account">
+                <span class="parent-name">Nom du Parent</span>
+                <a href="logout.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="notes-container">
+        <div class="notes-header">
+            <h1><i class="fas fa-clipboard-list"></i> Notes des Élèves</h1>
+            
+            <!-- Sélection de l'enfant et de la classe -->
+            <div class="selection-container">
+                <div class="form-group">
+                    <label for="enfant-select">Enfant :</label>
+                    <select id="enfant-select">
+                        <option value="enfant1">NOUBISSI Doriane</option>
+                        <option value="enfant2">ATANGANA jean</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="classe-select">Classe :</label>
+                    <select id="classe-select">
+                        <option value="">-- Sélectionnez une classe --</option>
+                        <option value="6eme">6ème</option>
+                        <option value="5eme">5ème</option>
+                        <option value="4eme">4ème</option>
+                        <option value="3eme">3ème</option>
+                        <option value="2nde">Seconde</option>
+                        <option value="1ere">Première</option>
+                        <option value="terminale">Terminale</option>
+                        </select>
+                        
+                </div>
+                
+                <button id="rechercherBtn" class="btn-primary">
+                    <i class="fas fa-search"></i> Rechercher
+                </button>
+            </div>
+        </div>
+
+        <!-- Résultats des notes -->
+        <div class="notes-results">
+            <div class="results-header">
+                <h2>Notes de <span id="nom-enfant">Ndi kakeu jean</span> - <span id="classe-enfant">6ème</span></h2>
+                <button id="downloadBtn" class="btn-secondary">
+                    <i class="fas fa-download"></i> Télécharger le bulletin
+                </button>
+            </div>
+            
+            <!-- Tableau des notes -->
+            <table class="notes-table">
+                <thead>
+                    <tr>
+                        <th>Matière</th>
+                        <th>Note</th>
+                        <th>Appréciation</th>
+                        <th>Moyenne Classe</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Exemple de données -->
+                    <tr>
+                        <td>Mathématiques</td>
+                        <td>15/20</td>
+                        <td>Très bon travail</td>
+                        <td>12.5</td>
+                        <td>15/03/2024</td>
+                    </tr>
+                    <tr>
+                        <td>Français</td>
+                        <td>13/20</td>
+                        <td>Peut mieux faire</td>
+                        <td>11.2</td>
+                        <td>10/03/2024</td>
+                    </tr>
+                    <!-- Plus de lignes... -->
+                </tbody>
+            </table>
+            
+            <!-- Statistiques -->
+            <div class="notes-stats">
+                <div class="stat-card">
+                    <h3>Moyenne Générale</h3>
+                    <p class="stat-value">14.2</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Rang</h3>
+                    <p class="stat-value">5ème/28</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Évolution</h3>
+                    <p class="stat-value positive">+1.2 points</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="parent-footer">
+        <a href="parent.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Retour à l'accueil
+        </a>
+    </footer>
+
+    <script src="notes.js"></script>
+</body>
+</html>

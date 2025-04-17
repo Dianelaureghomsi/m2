@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Administration - E_SchoolConnect</title>
+    <!--link rel="stylesheet" href="connexion.css"-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="admin-login-container">
+        <div class="login-header">
+            <img src="assets/images/logo.png" alt="E_SchoolConnect" class="login-logo">
+            <h1>Connexion - Administration</h1>
+        </div>
+
+        <div class="login-mode-selector">
+            <a href="connexion.html" class="mode-link">Parents</a>
+            <a href="connexion_enseignant.html" class="mode-link">Enseignants</a>
+            <a href="connexion_admin.html" class="mode-link active">Administration</a>
+        </div>
+
+        <form id="adminLoginForm" class="admin-login-form">
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit" class="login-btn"><a href="admin.html">Connexion</button></a>
+        </form>
+
+        <div class="login-footer">
+            <a href="indexe.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Retour à l'accueil
+            </a>
+            <p class="register-link">
+                Vous n'êtes pas encore inscrit? <a href="inscription.html">S'inscrire</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

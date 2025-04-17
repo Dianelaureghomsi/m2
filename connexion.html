@@ -1,0 +1,68 @@
+<! DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - E_SchoolConnect</title>
+    <!--link rel="stylesheet" href="connexion.css"-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <img src="assets/images/logo.png" alt="E_SchoolConnect" class="login-logo">
+            <h1>Choisir le mode de connexion</h1>
+        </div>
+
+        <div class="login-options">
+            <!-- Option Parents -->
+            <div class="login-option">
+                <div class="option-icon">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                <h2>Parents</h2>
+                <p>Connectez-vous en tant que parent</p>
+                <a href="connexion_parent.html" class="option-btn">Se connecter</a>
+            </div>
+
+            <!-- Option Enseignants -->
+            <div class="login-option">
+                <div class="option-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h2>Enseignants</h2>
+                <p>Connectez-vous en tant qu'enseignant</p>
+                <a href="connexion_enseignant.html" class="option-btn">Se connecter</a>
+            </div>
+
+            <!-- Option Administration -->
+            <div class="login-option">
+                <div class="option-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h2>Administration</h2>
+                <p>Connectez-vous en tant qu'administration</p>
+                <a href="connexion_admin.html" class="option-btn">Se connecter</a>
+            </div>
+        </div>
+
+        <div class="login-footer">
+            <a href="indexe.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Retour à l'accueil
+            </a>
+        </div>
+    </div>
+    <form action="traitement_connexion.php" method="POST">
+        <input type="email" name="email" required>
+        <input type="password" name="password" required>
+        <select name="role">
+            <option value="parent">Parent</option>
+            <option value="enseignant">Enseignant</option>
+            <option value="admin">Admin</option>
+        </select>
+        <button type="submit">Connexion</button>
+    </form>
+    
+</body>
+</html>

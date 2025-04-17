@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messagerie - E_SchoolConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Barre de navigation identique à l'interface parent -->
+    <nav class="parent-nav">
+        <div class="nav-left">
+            <img src="assets/images/logo.png" alt="Logo" class="nav-logo">
+        </div>
+        <div class="nav-right">
+            <ul class="parent-links">
+                <li><a href="parent.html">Accueil</a></li>
+                <li><a href="messagerie.html" class="active">Messagerie</a></li>
+                <li><a href="notes.html">Notes des élèves</a></li>
+                <li><a href="evenements.html">Événements</a></li>
+            </ul>
+            <div class="parent-account">
+                <span class="parent-name">Nom du Parent</span>
+                <a href="logout.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="messagerie-container">
+        <div class="messagerie-header">
+            <h1><i class="fas fa-envelope"></i> Messagerie</h1>
+            <button id="nouveauMessageBtn" class="btn-primary">
+                <i class="fas fa-plus"></i> Nouveau message
+            </button>
+        </div>
+
+        <!-- Formulaire d'envoi (masqué par défaut) -->
+        <div id="messageForm" class="message-form-container">
+            <h2>Envoyer un message</h2>
+            <form id="envoiMessageForm">
+                <div class="form-group">
+                    <label for="destinataire">Destinataire :</label>
+                    <select id="destinataire" required>
+                        <option value="">-- Sélectionnez un enseignant --</option>
+                        <option value="math">M. SIKALI(Mathématiques)</option>
+                        <option value="fr">Mme. MIMBEU(Français)</option>
+                        <option value="hist">M. TATAN (Histoire-Géo)</option>
+                        <option value="sc">Mme. GHOMSI (Sciences)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contenuMessage">Message :</label>
+                    <textarea id="contenuMessage" rows="6" required></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" id="annulerBtn" class="btn-secondary">Annuler</button>
+                    <button type="submit" class="btn-primary">Envoyer</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Historique des messages -->
+        <div class="messages-historic">
+            <h2><i class="fas fa-history"></i> Historique des messages</h2>
+            
+            <div class="messages-list">
+                <!-- Message 1 -->
+                <div class="message-card">
+                    <div class="message-header">
+                        <span class="enseignant">M. SIKALI (Mathématiques)</span>
+                        <span class="date">15 mars 2024 - 14:30</span>
+                    </div>
+                    <div class="message-content">
+                        <p>Bonjour, je vous informe que le prochain contrôle de mathématiques aura lieu le 22 mars. Cordialement.</p>
+                    </div>
+                </div>
+                
+                <!-- Message 2 -->
+                <div class="message-card">
+                    <div class="message-header">
+                        <span class="enseignant">Mme. MIMBEU (Français)</span>
+                        <span class="date">10 mars 2024 - 09:15</span>
+                    </div>
+                    <div class="message-content">
+                        <p>Votre enfant a bien progressé en rédaction ces dernières semaines. Continuez à l'encourager dans sa lecture.</p>
+                    </div>
+                </div>
+                
+                <!-- Plus de messages... -->
+            </div>
+        </div>
+    </main>
+    <!-- Contenu principal -->
+<main class="messagerie-container">
+    <!-- ... (contenu existant jusqu'à l'historique des messages) ... -->
+
+    <!-- Recherche d'élèves -->
+    <div class="recherche-eleve">
+        <h2><i class="fas fa-search"></i> Rechercher un élève</h2>
+        <div class="search-form">
+            <input type="text" id="searchEleveInput" placeholder=" matricule de l'élève">
+            <button id="searchEleveBtn" class="btn-primary">
+                <i class="fas fa-search"></i> Rechercher
+            </button>
+        </div>
+        <div id="eleveResults" class="eleve-results"></div>
+    </div>
+
+    <!-- Téléchargement des bulletins -->
+    <div class="bulletins-section" id="bulletinsSection" style="display:none;">
+        <h2><i class="fas fa-file-download"></i> Bulletins de notes</h2>
+        <div id="bulletinsList" class="bulletins-list">
+            <!-- Les bulletins seront ajoutés dynamiquement ici -->
+        </div>
+    </div>
+
+    <!-- Historique des messages existant... -->
+</main>
+
+    <!-- Pied de page -->
+    <footer class="parent-footer">
+        <a href="parent.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Retour à l'accueil
+        </a>
+    </footer>
+
+    <script src="messagerie.js"></script>
+</body>
+</html>
